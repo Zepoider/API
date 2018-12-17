@@ -1,6 +1,0 @@
-C:\Users\Ruslan\Documents\Visual Studio 2015\Projects\IT_Yard_Service\IT_Yard_Service\bin\Debug\IT_Yard_Service.exe.config
-C:\Users\Ruslan\Documents\Visual Studio 2015\Projects\IT_Yard_Service\IT_Yard_Service\bin\Debug\IT_Yard_Service.exe
-C:\Users\Ruslan\Documents\Visual Studio 2015\Projects\IT_Yard_Service\IT_Yard_Service\bin\Debug\IT_Yard_Service.pdb
-C:\Users\Ruslan\Documents\Visual Studio 2015\Projects\IT_Yard_Service\IT_Yard_Service\obj\Debug\IT_Yard_Service.csprojResolveAssemblyReference.cache
-C:\Users\Ruslan\Documents\Visual Studio 2015\Projects\IT_Yard_Service\IT_Yard_Service\obj\Debug\IT_Yard_Service.exe
-C:\Users\Ruslan\Documents\Visual Studio 2015\Projects\IT_Yard_Service\IT_Yard_Service\obj\Debug\IT_Yard_Service.pdb
