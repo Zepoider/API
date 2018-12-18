@@ -30,6 +30,31 @@ namespace Collection
 
             for (int i = 0; i < str.lenth; i++)
             {
+                Console.WriteLine($"{i} { str.GetByIndex(i).data}");
+            }
+
+            str.RemoveByIndex(2);
+            Console.WriteLine("___________________________________");
+            for (int i = 0; i < str.lenth; i++)
+            {
+                Console.WriteLine(str.GetByIndex(i).data);
+            }
+            Console.WriteLine($"Length: {str.lenth} Count: {str.count}");
+
+            str.InsertInIndex(2, new Cell<string>("horse"));
+
+            Console.WriteLine("___________________________________");
+            for (int i = 0; i < str.lenth; i++)
+            {
+                Console.WriteLine(str.GetByIndex(i).data);
+            }
+            Console.WriteLine($"Length: {str.lenth} Count: {str.count}");
+
+            str.Sort();
+
+            Console.WriteLine("___________________________________");
+            for (int i = 0; i < str.lenth; i++)
+            {
                 Console.WriteLine(str.GetByIndex(i).data);
             }
 
