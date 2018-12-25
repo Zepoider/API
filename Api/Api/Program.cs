@@ -6,7 +6,7 @@ namespace Api
     {
         static void Main(string[] args)
         {
-            new Utilites().MainMenu();
+            
         }
     }
 }

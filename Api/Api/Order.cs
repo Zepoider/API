@@ -6,10 +6,10 @@ namespace Api
 {
     class Order
     {
-        User Customer;
+        Customer Customer;
         DateTime OrderDate;
         string ShippingAddress;
-        List <OrderItem>  items;
+        List <OrderItem>  OrderItems;
 
         void DisplayEntityInfo()
         {
