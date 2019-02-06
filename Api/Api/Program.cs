@@ -7,51 +7,63 @@ namespace Api
         static void Main(string[] args)
         {
 
-            EntityRepository repo = new EntityRepository();
-            EntityRepositoryJSON repoJson = new EntityRepositoryJSON();
-            repoJson.repo = repo;
+            EntityRepositoryJSON<Customer> repoJsonCustomer = new EntityRepositoryJSON<Customer>();
+            EntityRepositoryJSON<Order> repoJsonOrder = new EntityRepositoryJSON<Order>();
+            EntityRepositoryJSON<OrderItem> repoJsonOrderItem = new EntityRepositoryJSON<OrderItem>();
+            EntityRepositoryJSON<Product> repoJsonProduct = new EntityRepositoryJSON<Product>();
 
-            for (int i = 0; i < 4; i++)
+            Product spaceship = new Product("Interstellar Spaceship", 5000000);
+            repoJsonProduct.Insert(spaceship); 
+            Product tank = new Product("Hover Tank", 10000);
+            repoJsonProduct.Insert(tank);
+
+
+            Customer customer = new Customer("Alex", "Burn");
+            repoJsonCustomer.Insert(customer);
+
+            Order order = new Order(customer);
+            repoJsonOrder.Insert(order);
+
+            OrderItem item = new OrderItem(spaceship, order.Id, 2);
+            repoJsonOrderItem.Insert(item);
+            OrderItem item2 = new OrderItem(tank, order.Id, 10);
+            repoJsonOrderItem.Insert(item2);
+
+            Order order1 = new Order(customer);
+            repoJsonOrder.Insert(order1);
+
+            OrderItem item3 = new OrderItem(tank, order1.Id, 15);
+            repoJsonOrderItem.Insert(item3);
+
+
+
+            foreach (var obj in repoJsonCustomer.repo._entities)
             {
-                Customer customer = new Customer();
-                repoJson.Insert(customer);
-                Order order = new Order();
-                order.Customer = customer;
-                repoJson.Insert(order);
-                Order order1 = new Order();
-                order1.Customer = customer;
-                repoJson.Insert(order1);
-            }
+                obj.Value.DisplayEntityInfo();
 
-            foreach (var item in repo._customers)
-            {
-                item.Value.DisplayEntityInfo();
-            }
-
-            Console.WriteLine("_______ All Orders _________________");
-
-            foreach (var item in repo._orders)
-            {
-                item.Value.DisplayEntityInfo();
-            }
-
-            Console.WriteLine("_______ All Customers and Orders after delete_________________");
-
-            var customerArray = repo.All(new Customer());
-            
-            repoJson.Delete(customerArray[0].Id);
-            repoJson.Delete(customerArray[1].Id);
-
-            foreach (var item in repo._customers)
-            {
-                item.Value.DisplayEntityInfo();
-
-                foreach (var item1 in repo._orders)
+                foreach (var obj1 in repoJsonOrder.repo._entities)
                 {
-                    if (item1.Value.Customer.Id == item.Value.Id)
+                    if (obj1.Value.Customer.Id == obj.Value.Id)
                     {
-                        item1.Value.DisplayEntityInfo();
+                        obj1.Value.DisplayEntityInfo();
+
+                        foreach (var obj2 in repoJsonOrderItem.repo._entities)
+                        {
+                            if (obj2.Value.OrderId == obj1.Value.Id)
+                            {
+                                obj2.Value.DisplayEntityInfo();
+
+                                foreach (var obj3 in repoJsonProduct.repo._entities)
+                                {
+                                    if (obj3.Value.Id == obj2.Value.Item.Id)
+                                    {
+                                        obj3.Value.DisplayEntityInfo();
+                                    }
+                                }
+                            }
+                        }
                     }
+                    
                 }
             }
 

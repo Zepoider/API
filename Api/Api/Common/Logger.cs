@@ -25,16 +25,13 @@ namespace Api
 
         private void WriteLogs(string message)
         {
-            if (!File.Exists(path))
+            using (File.Open(path, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
-                File.Create(path);
             }
-            else
+
+            using (StreamWriter stream = new StreamWriter(path, true))
             {
-                using (StreamWriter stream = new StreamWriter(path, true))
-                {
-                    stream.WriteLine(message);
-                }
+                stream.WriteLine(message);
             }
         }
     }

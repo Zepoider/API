@@ -1,0 +1,14 @@
+{
+  "7e393d16-bd69-4d08-b8ab-b42b4c53c314": {
+    "Id": "7e393d16-bd69-4d08-b8ab-b42b4c53c314",
+    "ProductName": "Interstellar Spaceship",
+    "Description": null,
+    "CurrentPrice": 5000000.0
+  },
+  "495541b5-5589-473b-a672-9e262df63b9b": {
+    "Id": "495541b5-5589-473b-a672-9e262df63b9b",
+    "ProductName": "Hover Tank",
+    "Description": null,
+    "CurrentPrice": 10000.0
+  }
+}

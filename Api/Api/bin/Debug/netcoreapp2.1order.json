@@ -1,0 +1,26 @@
+{
+  "4bc7cef9-8bb9-4b5c-ba1c-28a27cce4110": {
+    "Id": "4bc7cef9-8bb9-4b5c-ba1c-28a27cce4110",
+    "Customer": {
+      "Id": "bd306a6e-a54d-4762-99dd-5a28a203e8f2",
+      "AddressList": null,
+      "FirstName": "Alex",
+      "CustomerType": 0,
+      "LastName": "Burn",
+      "EmailAddress": null,
+      "FullName": "Alex Burn"
+    }
+  },
+  "c2b78a50-fb98-4082-8199-324d2438de97": {
+    "Id": "c2b78a50-fb98-4082-8199-324d2438de97",
+    "Customer": {
+      "Id": "bd306a6e-a54d-4762-99dd-5a28a203e8f2",
+      "AddressList": null,
+      "FirstName": "Alex",
+      "CustomerType": 0,
+      "LastName": "Burn",
+      "EmailAddress": null,
+      "FullName": "Alex Burn"
+    }
+  }
+}

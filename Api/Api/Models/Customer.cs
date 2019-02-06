@@ -6,8 +6,7 @@ namespace Api
 {
     public class Customer : EntityBase
     {
-
-        public List<Address> AddressList;
+        public List<Address> AddressList { get; set; }
         public string FirstName { get; set; }
         public int CustomerType { get; set; }
         public static int InstanceCount { get; set; }
@@ -16,23 +15,24 @@ namespace Api
         public string FullName { get => FirstName + " " + LastName; }
 
 
-        public Customer (): base()
+        public Customer (string first, string last)
         {
-
+            Id = Guid.NewGuid();
+            FirstName = first;
+            LastName = last;
         }
-        
 
 
         public override void DisplayEntityInfo()
         {
-            Console.WriteLine($"User {Id}");
+            Console.WriteLine($"User {FullName}");
         }
 
         public override bool Validate()
         {
             var isValid = true;
             if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
-            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
+            if (string.IsNullOrWhiteSpace(FirstName)) isValid = false;
             return isValid;
         }
     }
